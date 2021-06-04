@@ -1,2 +1,2 @@
-# oblong
-oblong ball game
+# Oblong
+An Oblong game with Oblong balls

@@ -1,0 +1,14 @@
+{
+  "name": "oblong",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "author": "18 Degree Angle",
+  "license": "GPL",
+  "devDependencies": {
+    "electron": "^13.1.1"
+  },
+  "scripts": {
+    "start": "electron ."
+  }
+}
