@@ -1,6 +1,7 @@
 let time;
 let lastTick;
 let clockRunning;
+let gameClock;
 
 let score = [0, 0];
 
@@ -11,11 +12,18 @@ function startGame(x, y, w, h) {
   time = 0;
   lastTick = Date.now();
   clockRunning = true;
+  gameClock = 40;
 }
 
 function drawClock(x, y, w, h) {
   let quarter = time / 300000 >> 0;
+  if(quarter > 3) {
+    sb = 0;
+  }
   let clock = 300000 - (time % 300000);
+  if(gameClock < 0) {
+    gameClock = 40;
+  }
 
   ctx.textAlign = 'left';
   ctx.font = `${(w*0.022)>>0}px sans-serif`;
@@ -26,6 +34,7 @@ function drawClock(x, y, w, h) {
 
   ctx.fillStyle = '#000';
   ctx.fillText(`2nd & 7`, x + w * 0.27, y + h * 0.1);
+  ctx.fillText(':' + ('' + (gameClock >> 0)).padStart(2, 0), x + w * 0.76, y + h * 0.1);
 
   ctx.textAlign = 'center'
   ctx.fillStyle = '#fff';
@@ -39,6 +48,7 @@ function drawgame(x, y, w, h) {
   let newTick = Date.now();
   if(clockRunning) {
     time += newTick - lastTick;
+    gameClock -= (newTick - lastTick) / 1000;
   }
   lastTick = newTick;
 
