@@ -2,6 +2,7 @@ let time;
 let lastTick;
 let clockRunning;
 let gameClock;
+let scollp;
 
 let score = [0, 0];
 
@@ -13,6 +14,7 @@ function startGame(x, y, w, h) {
   lastTick = Date.now();
   clockRunning = true;
   gameClock = 40;
+  scrollp=0;
 }
 
 function drawClock(x, y, w, h) {
@@ -43,7 +45,7 @@ function drawClock(x, y, w, h) {
 }
 
 function drawgame(x, y, w, h) {
-  ctx.drawImage(background, x, y, w, h);
+  ctx.drawImage(field, x-w*0.225, y-w*1.5*908/641/2+scrollp+h/2, w*1.5, w*1.5*908/641);
   ctx.drawImage(board, x, y, w, h);
   let newTick = Date.now();
   if(clockRunning) {

@@ -1,6 +1,10 @@
 const background = new Image();
 background.src = 'assets/background.png';
 
+const field = new Image();
+field.src = 'assets/field.png';
+
+
 const board = new Image();
 board.src = 'assets/board.png';
 
