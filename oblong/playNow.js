@@ -15,7 +15,7 @@ function startGame(x, y, w, h) {
 
 function drawClock(x, y, w, h) {
   let quarter = time / 300000 >> 0;
-  let clock = time % 300000;
+  let clock = 300000 - (time % 300000);
 
   ctx.textAlign = 'left';
   ctx.font = `${(w*0.022)>>0}px sans-serif`;
