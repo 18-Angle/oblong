@@ -194,10 +194,6 @@ window.ontouchmove = (event) => {
 let keys = [];
 
 document.onkeydown = (event) => {
-  if(binding >= 0) {
-    keyBindings.notes[binding] = event.keyCode;
-    binding = -1;
-  }
   keys.push([event.keyCode, true, Date.now()]);
 }
 
